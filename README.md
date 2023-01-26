@@ -11,12 +11,12 @@ pipe()
       |
       |-- child // cmd1
       :     |--dup2()
-      :     |--close end[0]
+      :     |--close Fd[0]
       :     |--execve(cmd1)
       :
       |-- parent // cmd2
             |--dup2()
-            |--close end[1]
+            |--close Fd[1]
             |--execve(cmd2)
  
 # pipe() sends the output of the first execve() as input to the second execve()
